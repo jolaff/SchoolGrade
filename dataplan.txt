@@ -1,0 +1,28 @@
+User Model
+FirstName - string
+LastName - string
+DisplayName - string
+Email - string
+
+Student Model
+FirstName - string
+LastName - string
+DisplayName - string
+Email - string
+SchoolGrade - Model
+
+Subject Model
+Name - string
+Teacher - string
+GradeId - Id
+Color - string?
+
+SchoolGrade Model
+Grade - Int32
+Subjects - List Subject
+
+Timetable Model
+Grade - Int32
+ClassDuration - Int32
+ClassesPerDay - Int32
+
