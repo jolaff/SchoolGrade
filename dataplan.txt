@@ -1,28 +1,28 @@
-User Model
+EntityBase (abstract) - OK
+Id - string
+
+UserModel (abstract) : EntityBase - OK
 FirstName - string
 LastName - string
 DisplayName - string
 Email - string
 
-Student Model
-FirstName - string
-LastName - string
-DisplayName - string
-Email - string
-SchoolGrade - Model
+ParentModel : UserModel
+Students - List Student
 
-Subject Model
+StudentModel
+Grade - int32
+Timetable - Timetable
+
+SubjectModel - OK
 Name - string
-Teacher - string
-GradeId - Id
 Color - string?
 
-SchoolGrade Model
-Grade - Int32
+ClassGradeModel - OK
+Grade - int32
 Subjects - List Subject
 
-Timetable Model
-Grade - Int32
-ClassDuration - Int32
-ClassesPerDay - Int32
-
+TimetableModel - OK
+ClassGrade - ClassGrade
+Times - List string (for simplicity)
+SchoolGradeTable - Dictionary<DayOfWeek, Dictionay<string (Times), SubjectModel>>
