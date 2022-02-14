@@ -10,6 +10,12 @@ public static class RegisterServices
         builder.RootComponents.Add<App>("#app");
         builder.RootComponents.Add<HeadOutlet>("head::after");
 
+        builder.Services.AddSingleton<IDbConnection, DbConnection>();
+        builder.Services.AddSingleton<ISubjectData, MongoSubjectData>();
+        builder.Services.AddSingleton<IClassGrade, MongoClassGrade>();
+        builder.Services.AddSingleton<ITimetableData, MongoTimetableData>();
+        builder.Services.AddSingleton<IUserData, MongoUserData>();
+
         builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
     }
 }
