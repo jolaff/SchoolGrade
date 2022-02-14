@@ -1,10 +1,10 @@
 namespace SchoolGrade.Library.DataAccess;
 
-public class MongoClassGrade : IClassGrade
+public class MongoClassGradeData : IClassGradeData
 {
     private readonly IMongoCollection<ClassGradeModel> _classgrades;
 
-    public MongoClassGrade(IDbConnection db)
+    public MongoClassGradeData(IDbConnection db)
     {
         _classgrades = db.ClassGradeCollection;
     }

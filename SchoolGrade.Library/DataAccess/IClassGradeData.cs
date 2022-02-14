@@ -1,6 +1,6 @@
 namespace SchoolGrade.Library.DataAccess;
 
-public interface IClassGrade
+public interface IClassGradeData
 {
     Task CreateClassGrade(ClassGradeModel classgrade);
     Task<List<ClassGradeModel>> GetAllClassGrades();
