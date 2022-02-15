@@ -4,9 +4,31 @@
 
 <h3>Sample Data</h3>
 
+@if (subjectsCreated)
+{
+    <h4>Subjects have been created</h4>
+}
+else
+{
+    <button class="btn btn-primary" @onclick="CreateSubjects">Create Subjects</button>
+}
+
+@if (classGradeCreated)
+{
+    <h4>Class Grade created!</h4>
+}
+else
+{
+    <button class="btn btn-primary" @onclick="CreateClassGrade">Create Grade</button>
+}
+
 @code
 {
+    private bool subjectsCreated = false;
+    private bool classGradeCreated = false;
+
     List<SubjectModel> subjs = new();
+
     private async Task CreateSubjects()
     {
         var subjects = await subjectData.GetAllSubjects();
@@ -45,6 +67,8 @@
         };
         await subjectData.CreateSubject(subj);
         subjs.Add(subj);
+
+        subjectsCreated = true;
     }
 
     private async Task CreateClassGrade()
@@ -59,5 +83,8 @@
             Grade = 7,
             Subjects = subjs
         };
+        await classGradeData.CreateClassGrade(clsGrd);
+
+        classGradeCreated = true;
     }
 }
