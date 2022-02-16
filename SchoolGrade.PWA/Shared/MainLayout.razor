@@ -5,24 +5,25 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar>
-        <MudIconButton Icon=@Icons.Material.Filled.Menu Color="Color.Inherit" Edge="Edge.Start" OnClick=@((e) =>
-            DrawerToggle()) />
-        Grade Escolar
+    <MudAppBar Elevation="6" Dense="true">
+        @* <MudIconButton Icon=@Icons.Filled.ArrowBackIos Color="Color.Inherit" Size="Size.Large" Edge="Edge.Start" />
+        *@
+        <MudText Typo="Typo.h6" Class="d-flex flex-grow-1">Horário de Aula</MudText>
+        <MudAvatar>
+            <MudIconButton Icon=@Icons.Filled.PeopleAlt Color="Color.Inherit" />
+        </MudAvatar>
     </MudAppBar>
-    <MudDrawer @bind-Open=@_drawerOpen>
-
-    </MudDrawer>
-    <MudMainContent>
-        @Body
+    <MudMainContent Class="mud-elevation-2">
+        <MudContainer>
+            @Body
+        </MudContainer>
     </MudMainContent>
 </MudLayout>
+<MudGrid>
+    <MudFab Color="Color.Secondary" Size="Size.Large"
+        Style="Position:absolute; bottom: 0px; right: 0px; margin: 15px;" />
+</MudGrid>
 
 @code {
-    bool _drawerOpen = true;
-
-    void DrawerToggle()
-    {
-        _drawerOpen = !_drawerOpen;
-    }
+    private int _selected = 1;
 }
