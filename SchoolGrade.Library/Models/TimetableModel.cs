@@ -1,5 +1,5 @@
 namespace SchoolGrade.Library.Models;
-public class TimetableModel : EntityBase
+public class TimetableModel
 {
     public TimetableModel()
     {

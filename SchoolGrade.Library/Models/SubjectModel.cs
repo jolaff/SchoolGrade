@@ -1,7 +1,8 @@
 namespace SchoolGrade.Library.Models;
 
-public class SubjectModel : EntityBase
+public class SubjectModel
 {
     public string Name { get; set; }
-    public string Color { get; set; }
+    public string ForegroundColor { get; set; }
+    public string BackgroundColor { get; set; }
 }

@@ -1,6 +1,6 @@
 namespace SchoolGrade.Library.Models;
 
-public class ClassGradeModel : EntityBase
+public class ClassGradeModel
 {
     public ClassGradeModel()
     {
