@@ -1,29 +1,35 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider />
-<MudDialogProvider />
-<MudSnackbarProvider />
+<PageTitle>Grade Escolar</PageTitle>
 
-<MudLayout>
-    <MudAppBar Elevation="6" Dense="true">
-        @* <MudIconButton Icon=@Icons.Filled.ArrowBackIos Color="Color.Inherit" Size="Size.Large" Edge="Edge.Start" />
-        *@
-        <MudText Typo="Typo.h6" Class="d-flex flex-grow-1">Horário de Aula</MudText>
-        <MudAvatar>
-            <MudIconButton Icon=@Icons.Filled.PeopleAlt Color="Color.Inherit" />
-        </MudAvatar>
-    </MudAppBar>
-    <MudMainContent Class="mud-elevation-2">
-        <MudContainer>
-            @Body
-        </MudContainer>
-    </MudMainContent>
-</MudLayout>
-<MudGrid>
-    <MudFab Color="Color.Secondary" Size="Size.Large"
-        Style="Position:absolute; bottom: 0px; right: 0px; margin: 15px;" />
-</MudGrid>
+<MatAppBar Fixed="true">
+    <MatAppBarRow>
+        <MatAppBarSection>
+            <MatAppBarTitle>Grade semanal</MatAppBarTitle>
+        </MatAppBarSection>
+        <MatAppBarSection Align="@MatAppBarSectionAlign.End">
+            <MatIconButton Icon="person" OnClick=@OnClick RefBack=@studentForwardRef>
+            </MatIconButton>
+            <MatMenu @ref="ChooseStudent" TargetForwardRef=@studentForwardRef>
+                <MatList>
+                    <MatListItem>
+                        <MatButton Icon="favorite" Label="Luigi"></MatButton>
+                    </MatListItem>
+                    <MatListItem>
+                        <MatButton Icon="favorite" Label="Maria Luísa"></MatButton>
+                    </MatListItem>
+                </MatList>
+            </MatMenu>
+        </MatAppBarSection>
+    </MatAppBarRow>
+</MatAppBar>
 
 @code {
-    private int _selected = 1;
+    ForwardRef studentForwardRef = new ForwardRef();
+    BaseMatMenu ChooseStudent;
+
+    public void OnClick(MouseEventArgs e)
+    {
+        this.ChooseStudent.OpenAsync();
+    }
 }
