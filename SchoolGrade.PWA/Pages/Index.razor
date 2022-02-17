@@ -1,5 +1,54 @@
 ﻿@page "/"
+@inject IStudentData studentData
 
-<PageTitle>Grade Escolar</PageTitle>
+<MatAppBarContainer>
+    <MatAppBar Fixed="true">
+        <MatAppBarRow>
+            <MatAppBarSection>
+                <MatAppBarTitle>Grade semanal</MatAppBarTitle>
+            </MatAppBarSection>
+            <MatAppBarSection Align="@MatAppBarSectionAlign.End">
+                <MatIconButton Icon="person" OnClick=@OnClick RefBack=@studentForwardRef>
+                </MatIconButton>
+                <MatMenu @ref="ChooseStudent" TargetForwardRef=@studentForwardRef>
+                    <MatList>
+                        @foreach (var student in students)
+                        {
+                            <MatListItem>
+                                <MatButton OnClick=@((e) => StudentOnClick(e, student)) Icon=@student.IconImage
+                                Label=@student.FirstName></MatButton>
+                            </MatListItem>
+                        }
+                    </MatList>
+                </MatMenu>
+            </MatAppBarSection>
+        </MatAppBarRow>
+    </MatAppBar>
+    @selectedStudent?.DisplayName
+    <MatAppBarContent>
 
-<h1>Português</h1>
+    </MatAppBarContent>
+</MatAppBarContainer>
+
+@code {
+    ForwardRef studentForwardRef = new ForwardRef();
+    BaseMatMenu ChooseStudent;
+
+    private List<StudentModel> students;
+    private StudentModel selectedStudent;
+
+    protected override void OnInitialized()
+    {
+        students = studentData.GetAllStudents();
+    }
+
+    public void OnClick(MouseEventArgs e)
+    {
+        this.ChooseStudent.OpenAsync();
+    }
+
+    public void StudentOnClick(MouseEventArgs e, StudentModel student)
+    {
+        selectedStudent = student;
+    }
+}

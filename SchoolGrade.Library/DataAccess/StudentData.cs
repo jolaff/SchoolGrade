@@ -20,7 +20,7 @@ public class StudentData : IStudentData
         Email = "luigi.landgraf@aluno.imaculada.com.br",
         Grade = 7,
         GradeLetter = 'A',
-        ThemeColor = "#0000FF"
+        IconImage = "favorite"
     };
 
     StudentModel MaluBSL = new StudentModel()
@@ -31,7 +31,7 @@ public class StudentData : IStudentData
         Email = "maria.landgraf@aluno.imaculada.com.br",
         Grade = 4,
         GradeLetter = 'D',
-        ThemeColor = "#FF0000"
+        IconImage = "favorite"
     };
 
     public List<StudentModel> GetAllStudents()

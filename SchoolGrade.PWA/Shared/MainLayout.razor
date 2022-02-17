@@ -2,34 +2,4 @@
 
 <PageTitle>Grade Escolar</PageTitle>
 
-<MatAppBar Fixed="true">
-    <MatAppBarRow>
-        <MatAppBarSection>
-            <MatAppBarTitle>Grade semanal</MatAppBarTitle>
-        </MatAppBarSection>
-        <MatAppBarSection Align="@MatAppBarSectionAlign.End">
-            <MatIconButton Icon="person" OnClick=@OnClick RefBack=@studentForwardRef>
-            </MatIconButton>
-            <MatMenu @ref="ChooseStudent" TargetForwardRef=@studentForwardRef>
-                <MatList>
-                    <MatListItem>
-                        <MatButton Icon="favorite" Label="Luigi"></MatButton>
-                    </MatListItem>
-                    <MatListItem>
-                        <MatButton Icon="favorite" Label="Maria Luísa"></MatButton>
-                    </MatListItem>
-                </MatList>
-            </MatMenu>
-        </MatAppBarSection>
-    </MatAppBarRow>
-</MatAppBar>
-
-@code {
-    ForwardRef studentForwardRef = new ForwardRef();
-    BaseMatMenu ChooseStudent;
-
-    public void OnClick(MouseEventArgs e)
-    {
-        this.ChooseStudent.OpenAsync();
-    }
-}
+@Body
