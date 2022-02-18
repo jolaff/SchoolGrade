@@ -8,7 +8,10 @@
                 <MatAppBarTitle>Grade semanal</MatAppBarTitle>
             </MatAppBarSection>
             <MatAppBarSection Align="@MatAppBarSectionAlign.End">
-                <MatIconButton Icon="person" OnClick=@OnClick RefBack=@studentForwardRef>
+                <MatH6>@(selectedStudent == null ? "" :
+                    selectedStudent.DisplayName)</MatH6>
+                <MatIconButton Icon=@(selectedStudent == null ? "person" : selectedStudent.IconImage) OnClick=@OnClick
+                    RefBack=@studentForwardRef>
                 </MatIconButton>
                 <MatMenu @ref="ChooseStudent" TargetForwardRef=@studentForwardRef>
                     <MatList>
@@ -24,9 +27,9 @@
             </MatAppBarSection>
         </MatAppBarRow>
     </MatAppBar>
-    @selectedStudent?.DisplayName
-    <MatAppBarContent>
 
+    <MatAppBarContent>
+        <h1>@selectedStudent?.FirstName</h1>
     </MatAppBarContent>
 </MatAppBarContainer>
 
@@ -40,6 +43,7 @@
     protected override void OnInitialized()
     {
         students = studentData.GetAllStudents();
+        selectedStudent = studentData.GetStudent("Lu");
     }
 
     public void OnClick(MouseEventArgs e)
