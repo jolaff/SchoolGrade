@@ -1,11 +1,18 @@
 ﻿@page "/"
+@page "/{displayName}"
 @inject IStudentData studentData
 
-@code {
-    private List<StudentModel> students;
+<h1>Olá @selectedStudent?.FirstName! Hoje é @weekDay</h1>
 
-    protected override void OnInitialized()
+@code {
+    private string weekDay = DateTime.Now.ToString("dddd");
+
+    [Parameter] public string DisplayName { get; set; }
+
+    private StudentModel selectedStudent = new();
+
+    protected override void OnParametersSet()
     {
-        students = studentData.GetAllStudents();
+        selectedStudent = studentData.GetStudent(DisplayName);
     }
 }

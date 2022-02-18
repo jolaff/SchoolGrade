@@ -1,17 +1,29 @@
 ﻿@inherits LayoutComponentBase
+@inject IStudentData studentData
 
 <PageTitle>Grade Escolar</PageTitle>
 
 <div class="main">
     <header>
-        <Navbar />
+        <Navbar Students=@students />
     </header>
 
-    <div class="content px-4">
+    <div class="container">
         @Body
     </div>
 
     <footer>
-        Todos os direitos reservados
+        <div class="container">
+            Todos os direitos reservados
+        </div>
     </footer>
 </div>
+
+@code {
+    private List<StudentModel> students = new();
+
+    protected override void OnInitialized()
+    {
+        students = studentData.GetAllStudents();
+    }
+}
