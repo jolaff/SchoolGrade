@@ -2,11 +2,9 @@
 @page "/{displayName}"
 @inject IStudentData studentData
 
-<h1>Olá @selectedStudent?.FirstName! Hoje é @weekDay</h1>
+<SelectWeekDay></SelectWeekDay>
 
 @code {
-    private string weekDay = DateTime.Now.ToString("dddd");
-
     [Parameter] public string DisplayName { get; set; }
 
     private StudentModel selectedStudent = new();
