@@ -1,6 +1,6 @@
 namespace SchoolGrade.Library.DataAccess;
 
-public class SubjectData
+public class SubjectData : ISubjectData
 {
     private readonly List<SubjectModel> subjects;
 
@@ -69,4 +69,7 @@ public class SubjectData
             }
         };
     }
+
+    public SubjectModel GetSubject(string subject)
+        => subjects.Find(sbj => sbj.Name == subject);
 }
