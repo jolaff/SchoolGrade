@@ -2,11 +2,12 @@ namespace SchoolGrade.Library.DataAccess;
 
 public class ClassGradeData : IClassGradeData
 {
+    private readonly ISubjectData _subject;
     private readonly List<ClassGradeModel> classGrades;
-    private readonly SubjectData subject;
 
-    public ClassGradeData()
+    public ClassGradeData(ISubjectData subject)
     {
+        _subject = subject;
         classGrades = new List<ClassGradeModel>();
 
         CreateSeventhGrade();
@@ -16,38 +17,38 @@ public class ClassGradeData : IClassGradeData
 
     private void CreateSeventhGrade()
     {
-        var seventhGrade = NewGrade(7);
+        var seventhGrade = CreateNewGrade(7);
 
         classGrades.Add(seventhGrade);
-        seventhGrade.Subjects.Add(subject.GetSubject("Ciências"));
-        seventhGrade.Subjects.Add(subject.GetSubject("Educação Física"));
-        seventhGrade.Subjects.Add(subject.GetSubject("Espanhol"));
-        seventhGrade.Subjects.Add(subject.GetSubject("Geografia"));
-        seventhGrade.Subjects.Add(subject.GetSubject("História"));
-        seventhGrade.Subjects.Add(subject.GetSubject("Inglês"));
-        seventhGrade.Subjects.Add(subject.GetSubject("Matemática"));
-        seventhGrade.Subjects.Add(subject.GetSubject("Português"));
-        seventhGrade.Subjects.Add(subject.GetSubject("Religião"));
-        seventhGrade.Subjects.Add(subject.GetSubject("Teatro"));
+        seventhGrade.Subjects.Add(_subject.GetSubject("Ciências"));
+        seventhGrade.Subjects.Add(_subject.GetSubject("Educação Física"));
+        seventhGrade.Subjects.Add(_subject.GetSubject("Espanhol"));
+        seventhGrade.Subjects.Add(_subject.GetSubject("Geografia"));
+        seventhGrade.Subjects.Add(_subject.GetSubject("História"));
+        seventhGrade.Subjects.Add(_subject.GetSubject("Inglês"));
+        seventhGrade.Subjects.Add(_subject.GetSubject("Matemática"));
+        seventhGrade.Subjects.Add(_subject.GetSubject("Português"));
+        seventhGrade.Subjects.Add(_subject.GetSubject("Religião"));
+        seventhGrade.Subjects.Add(_subject.GetSubject("Teatro"));
     }
 
     private void CreateFourthGrade()
     {
-        var fourthGrade = NewGrade(4);
+        var fourthGrade = CreateNewGrade(4);
 
         classGrades.Add(fourthGrade);
-        fourthGrade.Subjects.Add(subject.GetSubject("Arte"));
-        fourthGrade.Subjects.Add(subject.GetSubject("Educação Física"));
-        fourthGrade.Subjects.Add(subject.GetSubject("Geografia"));
-        fourthGrade.Subjects.Add(subject.GetSubject("História"));
-        fourthGrade.Subjects.Add(subject.GetSubject("Inglês"));
-        fourthGrade.Subjects.Add(subject.GetSubject("Matemática"));
-        fourthGrade.Subjects.Add(subject.GetSubject("Música"));
-        fourthGrade.Subjects.Add(subject.GetSubject("Português"));
-        fourthGrade.Subjects.Add(subject.GetSubject("Religião"));
+        fourthGrade.Subjects.Add(_subject.GetSubject("Arte"));
+        fourthGrade.Subjects.Add(_subject.GetSubject("Educação Física"));
+        fourthGrade.Subjects.Add(_subject.GetSubject("Geografia"));
+        fourthGrade.Subjects.Add(_subject.GetSubject("História"));
+        fourthGrade.Subjects.Add(_subject.GetSubject("Inglês"));
+        fourthGrade.Subjects.Add(_subject.GetSubject("Matemática"));
+        fourthGrade.Subjects.Add(_subject.GetSubject("Música"));
+        fourthGrade.Subjects.Add(_subject.GetSubject("Português"));
+        fourthGrade.Subjects.Add(_subject.GetSubject("Religião"));
     }
 
-    private ClassGradeModel NewGrade(int grade)
+    private ClassGradeModel CreateNewGrade(int grade)
     {
         var newGrade = new ClassGradeModel()
         {

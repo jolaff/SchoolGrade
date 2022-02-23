@@ -12,6 +12,9 @@ public static class RegisterServices
 
         builder.Services.AddMatBlazor();
 
+        builder.Services.AddSingleton<ISubjectData, SubjectData>();
+        builder.Services.AddSingleton<IClassGradeData, ClassGradeData>();
+        builder.Services.AddSingleton<ITimetableData, TimetableData>();
         builder.Services.AddSingleton<IStudentData, StudentData>();
 
         builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });

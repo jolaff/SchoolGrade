@@ -2,15 +2,19 @@ namespace SchoolGrade.Library.DataAccess;
 
 public class StudentData : IStudentData
 {
+    private readonly ITimetableData _timetable;
     private readonly List<StudentModel> students;
-    private readonly TimetableData timetable;
 
-    public StudentData()
+    public StudentData(ITimetableData timetable)
     {
+        _timetable = timetable;
         students = new List<StudentModel>();
 
         students.Add(LuigiBSL);
         students.Add(MaluBSL);
+
+        LuigiBSL.Timetable = timetable.GetTimeTable(LuigiBSL.Grade);
+        MaluBSL.Timetable = timetable.GetTimeTable(MaluBSL.Grade);
     }
 
     StudentModel LuigiBSL = new StudentModel()

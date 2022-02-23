@@ -3,6 +3,8 @@ public class TimetableModel
 {
     public TimetableModel()
     {
+        ClassGrade = new ClassGradeModel();
+        Times = new List<string>();
         SchoolGradeTable = new Dictionary<DayOfWeek, Dictionary<string, SubjectModel>>();
     }
 
