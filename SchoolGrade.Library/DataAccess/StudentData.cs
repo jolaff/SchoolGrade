@@ -3,6 +3,7 @@ namespace SchoolGrade.Library.DataAccess;
 public class StudentData : IStudentData
 {
     private readonly List<StudentModel> students;
+    private readonly TimetableData timetable;
 
     public StudentData()
     {
