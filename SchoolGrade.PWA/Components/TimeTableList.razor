@@ -1,0 +1,14 @@
+<div class="container p-1">
+    <div class="card border-primary mb-1">
+        <div class="card-header">@ChildContent</div>
+        <div class="card-body text-primary">
+            <h6 class="card-title">@Student.Timetable.SchoolGradeTable[WeekDay]["07h05"].Name</h6>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public StudentModel Student { get; set; }
+    [Parameter] public DayOfWeek WeekDay { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+}

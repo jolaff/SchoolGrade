@@ -1,12 +1,21 @@
 ﻿@page "/"
 @page "/{displayName}"
 @inject IStudentData studentData
+@using SchoolGrade.PWA.Components
 
-<SelectWeekDay></SelectWeekDay>
+<SelectWeekDay @bind-Today="today" />
+
+@if (selectedStudent != null)
+{
+    foreach (string time in selectedStudent.Timetable.SchoolGradeTable[today].Keys)
+    {
+        <TimeTableList Student=@selectedStudent WeekDay=@today>@time</TimeTableList>
+    }
+}
 
 @code {
     [Parameter] public string DisplayName { get; set; }
-
+    private DayOfWeek today = DateTime.Today.DayOfWeek;
     private StudentModel selectedStudent = new();
 
     protected override void OnParametersSet()

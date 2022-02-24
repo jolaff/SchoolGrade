@@ -46,6 +46,30 @@ public class TimetableData : ITimetableData
         luigiTimetable.SchoolGradeTable[DayOfWeek.Tuesday]["10h50"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Ciências");
         luigiTimetable.SchoolGradeTable[DayOfWeek.Tuesday]["11h40"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Espanhol");
 
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Wednesday]["07h05"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Inglês");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Wednesday]["07h55"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Geografia");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Wednesday]["08h45"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Português");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Wednesday]["09h35"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Intervalo");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Wednesday]["10h00"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Educação Física");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Wednesday]["10h50"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Ciências");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Wednesday]["11h40"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Geografia");
+
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Thursday]["07h05"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Português");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Thursday]["07h55"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "História");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Thursday]["08h45"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Espanhol");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Thursday]["09h35"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Intervalo");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Thursday]["10h00"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Português");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Thursday]["10h50"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Matemática");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Thursday]["11h40"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Inglês");
+
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Friday]["07h05"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "História");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Friday]["07h55"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Inglês");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Friday]["08h45"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Geografia");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Friday]["09h35"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Intervalo");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Friday]["10h00"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Matemática");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Friday]["10h50"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Educação Física");
+        luigiTimetable.SchoolGradeTable[DayOfWeek.Friday]["11h40"] = _classGrade.GetClassGrade(7).Subjects.Find(s => s.Name == "Português");
+
         timetables.Add(luigiTimetable);
     }
 
@@ -62,6 +86,41 @@ public class TimetableData : ITimetableData
         };
 
         var maluTimetable = CreateNewTimetable(fourthGradeTimes, 4);
+
+        maluTimetable.SchoolGradeTable[DayOfWeek.Monday]["12h45"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Música");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Monday]["13h35"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Inglês");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Monday]["14h25"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "História");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Monday]["15h15"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Intervalo");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Monday]["15h45"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Português");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Monday]["16h35"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Português");
+
+        maluTimetable.SchoolGradeTable[DayOfWeek.Tuesday]["12h45"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Matemática");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Tuesday]["13h35"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Matemática");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Tuesday]["14h25"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Geografia");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Tuesday]["15h15"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Intervalo");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Tuesday]["15h45"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Educação Física");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Tuesday]["16h35"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Inglês");
+
+        maluTimetable.SchoolGradeTable[DayOfWeek.Wednesday]["12h45"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Português");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Wednesday]["13h35"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Português");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Wednesday]["14h25"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Inglês");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Wednesday]["15h15"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Intervalo");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Wednesday]["15h45"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Ciências");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Wednesday]["16h35"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Ciências");
+
+        maluTimetable.SchoolGradeTable[DayOfWeek.Thursday]["12h45"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Arte");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Thursday]["13h35"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Educação Física");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Thursday]["14h25"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Inglês");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Thursday]["15h15"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Intervalo");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Thursday]["15h45"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Matemática");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Thursday]["16h35"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Matemática");
+
+        maluTimetable.SchoolGradeTable[DayOfWeek.Friday]["12h45"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Matemática");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Friday]["13h35"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Matemática");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Friday]["14h25"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Religião");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Friday]["15h15"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Intervalo");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Friday]["15h45"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Inglês");
+        maluTimetable.SchoolGradeTable[DayOfWeek.Friday]["16h35"] = _classGrade.GetClassGrade(4).Subjects.Find(s => s.Name == "Português");
 
         timetables.Add(maluTimetable);
     }

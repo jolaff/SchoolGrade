@@ -1,0 +1,56 @@
+<div class="container shadow p-4 mt-2" style="background-color: rgba(130,225,235,0.5);">
+    <div class="row">
+        <div class="col-2">
+            <button type="button" class="btn btn-outline-dark" @onclick=@WeekDayBackward><span
+                    class="oi oi-chevron-left"></span></button>
+        </div>
+        <div class="col-8">
+            <h3 class="text-center text-uppercase">@weekDay</h3>
+        </div>
+        <div class="col-2">
+            <button type="button" class="btn btn-outline-dark" @onclick=@WeekDayForward><span
+                    class="oi oi-chevron-right"></span></button>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public DayOfWeek Today { get; set; }
+    [Parameter] public EventCallback<DayOfWeek> TodayChanged { get; set; }
+    private string weekDay;
+    int index = 0;
+
+    protected override void OnInitialized()
+    {
+        WeekDayToString(Today, out weekDay);
+        index = (int)Today;
+    }
+
+    private async Task WeekDayForward()
+    {
+        index++;
+
+        if (index == 6)
+            index = 1;
+
+        await TodayChanged.InvokeAsync(Today = (DayOfWeek)index);
+        WeekDayToString(Today, out weekDay);
+    }
+
+    private async Task WeekDayBackward()
+    {
+        index--;
+
+        if (index == 0)
+            index = 5;
+
+        await TodayChanged.InvokeAsync(Today = (DayOfWeek)index);
+        WeekDayToString(Today, out weekDay);
+    }
+
+    private void WeekDayToString(DayOfWeek day, out string show)
+    {
+        var culture = new System.Globalization.CultureInfo("pt-BR");
+        show = culture.DateTimeFormat.GetDayName(day);
+    }
+}
