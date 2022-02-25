@@ -4,27 +4,17 @@
 <PageTitle>Grade Escolar</PageTitle>
 
 <div class="main">
-    <div class="row">
-        <div class="col">
-            <header>
-                <Navbar Students=@students />
-            </header>
-        </div>
+    <header class="px-4">
+        <Navbar Students=@students />
+    </header>
+
+    <div class="content px-4">
+        @Body
     </div>
 
-    <div class="row">
-        <div class="col">
-            @Body
-        </div>
-    </div>
-
-    <div class="row fixed-bottom">
-        <div class="col">
-            <footer>
-                <p class="text-center">Todos os direitos reservados</p>
-            </footer>
-        </div>
-    </div>
+    <footer class="bottom-row px-4">
+        <p class="text-center">Todos os direitos reservados</p>
+    </footer>
 </div>
 
 @code {

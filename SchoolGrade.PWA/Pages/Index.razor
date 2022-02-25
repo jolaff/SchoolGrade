@@ -3,15 +3,20 @@
 @inject IStudentData studentData
 @using SchoolGrade.PWA.Components
 
-<SelectWeekDay @bind-Today="today" />
-
-@if (selectedStudent != null)
-{
-    foreach (string time in selectedStudent.Timetable.SchoolGradeTable[today].Keys)
-    {
-        <TimeTableList Student=@selectedStudent WeekDay=@today>@time</TimeTableList>
-    }
-}
+<main>
+    <div class="container">
+        <SelectWeekDay @bind-Today="today"></SelectWeekDay>
+    </div>
+    <div class="container">
+        @if (selectedStudent != null)
+        {
+            foreach (string time in selectedStudent.Timetable.SchoolGradeTable[today].Keys)
+            {
+                <TimeTableList Student=@selectedStudent WeekDay=@today Time=@time></TimeTableList>
+            }
+        }
+    </div>
+</main>
 
 @code {
     [Parameter] public string DisplayName { get; set; }

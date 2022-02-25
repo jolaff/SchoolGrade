@@ -30,6 +30,7 @@ public class ClassGradeData : IClassGradeData
         seventhGrade.Subjects.Add(_subject.GetSubject("Português"));
         seventhGrade.Subjects.Add(_subject.GetSubject("Religião"));
         seventhGrade.Subjects.Add(_subject.GetSubject("Teatro"));
+        seventhGrade.Subjects.Add(_subject.GetSubject("Intervalo"));
     }
 
     private void CreateFourthGrade()
@@ -46,6 +47,7 @@ public class ClassGradeData : IClassGradeData
         fourthGrade.Subjects.Add(_subject.GetSubject("Música"));
         fourthGrade.Subjects.Add(_subject.GetSubject("Português"));
         fourthGrade.Subjects.Add(_subject.GetSubject("Religião"));
+        fourthGrade.Subjects.Add(_subject.GetSubject("Intervalo"));
     }
 
     private ClassGradeModel CreateNewGrade(int grade)
