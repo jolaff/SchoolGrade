@@ -39,6 +39,7 @@ public class ClassGradeData : IClassGradeData
 
         classGrades.Add(fourthGrade);
         fourthGrade.Subjects.Add(_subject.GetSubject("Arte"));
+        fourthGrade.Subjects.Add(_subject.GetSubject("Ciências"));
         fourthGrade.Subjects.Add(_subject.GetSubject("Educação Física"));
         fourthGrade.Subjects.Add(_subject.GetSubject("Geografia"));
         fourthGrade.Subjects.Add(_subject.GetSubject("História"));

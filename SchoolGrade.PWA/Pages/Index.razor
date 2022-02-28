@@ -5,7 +5,7 @@
 
 <main class="full-height">
     <div class="container">
-        <SelectWeekDay @bind-Today="today"></SelectWeekDay>
+        <SelectWeekDay @bind-Today="@today"></SelectWeekDay>
     </div>
     <div class="container">
         @if (selectedStudent != null)
@@ -20,11 +20,21 @@
 
 @code {
     [Parameter] public string DisplayName { get; set; }
-    private DayOfWeek today = DateTime.Today.DayOfWeek;
+    private DayOfWeek today;
     private StudentModel selectedStudent = new();
 
     protected override void OnParametersSet()
     {
         selectedStudent = studentData.GetStudent(DisplayName);
+        today = CheckForWeekend();
+    }
+
+    private DayOfWeek CheckForWeekend()
+    {
+        var weekDay = DateTime.Today.DayOfWeek;
+        if (weekDay == DayOfWeek.Saturday || weekDay == DayOfWeek.Sunday)
+            return DayOfWeek.Monday;
+        else
+            return weekDay;
     }
 }
