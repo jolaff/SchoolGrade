@@ -1,0 +1,21 @@
+@page "/subjectlist"
+@inject ISubjectData subjectData
+
+@foreach (var subject in subjects)
+{
+    <ul class="list-group">
+        <li class="list-group-item d-flex align-items-center shadow-sm justify-content-start" style="background-color: rgba(@subject.BackgroundColor);
+        border-color: rgba(@subject.ForegroundColor); border-width: 2px;">
+            <span class="fs-4">@subject.Name</span>
+        </li>
+    </ul>
+}
+
+@code {
+    public List<SubjectModel> subjects { get; set; } = new();
+
+    protected override void OnInitialized()
+    {
+        subjects = subjectData.GetAllSubjects();
+    }
+}

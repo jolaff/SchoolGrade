@@ -23,26 +23,26 @@ public class SubjectData : ISubjectData
             new SubjectModel
             {
                 Name = "Educação Física",
-                ForegroundColor = "172,140,164,1",
-                BackgroundColor = "172,140,164,0.4"
+                ForegroundColor = "255,193,7,1",
+                BackgroundColor = "255,193,7,0.4"
             },
             new SubjectModel
             {
                 Name = "Espanhol",
-                ForegroundColor = "43,75,245,1",
-                BackgroundColor = "43,75,245,0.4"
+                ForegroundColor = "13,110,253,1",
+                BackgroundColor = "13,110,253,0.4"
             },
             new SubjectModel
             {
                 Name = "Geografia",
-                ForegroundColor = "127,66,185,1",
-                BackgroundColor = "127,66,185,0.4"
+                ForegroundColor = "111,66,193,1",
+                BackgroundColor = "111,66,193,0.4"
             },
             new SubjectModel
             {
                 Name = "História",
-                ForegroundColor = "110,152,81,1",
-                BackgroundColor = "110,152,81,0.4"
+                ForegroundColor = "220,50,50,1",
+                BackgroundColor = "220,50,50,0.4"
             },
             new SubjectModel
             {
@@ -53,8 +53,8 @@ public class SubjectData : ISubjectData
             new SubjectModel
             {
                 Name = "Matemática",
-                ForegroundColor = "6,251,180,1",
-                BackgroundColor = "6,251,180,0.4"
+                ForegroundColor = "210,50,135,1",
+                BackgroundColor = "210,50,135,0.4"
             },
             new SubjectModel
             {
@@ -71,24 +71,27 @@ public class SubjectData : ISubjectData
             new SubjectModel
             {
                 Name = "Religião",
-                ForegroundColor = "89,77,118,1",
-                BackgroundColor = "89,77,118,0.4"
+                ForegroundColor = "220,100,30,1",
+                BackgroundColor = "220,100,30,0.4"
             },
             new SubjectModel
             {
                 Name = "Teatro",
-                ForegroundColor = "5,165,48,1",
-                BackgroundColor = "5,165,48,0.4"
+                ForegroundColor = "255,150,20,1",
+                BackgroundColor = "255,150,20,0.4"
             },
             new SubjectModel
             {
                 Name = "Intervalo",
-                ForegroundColor = "0,200,0,1",
-                BackgroundColor = "0,200,0,0.4"
+                ForegroundColor = "25,245,25,1",
+                BackgroundColor = "25,245,25,0.4"
             }
         };
     }
 
     public SubjectModel GetSubject(string subject)
         => subjects.Find(sbj => sbj.Name == subject);
+
+    public List<SubjectModel> GetAllSubjects()
+        => subjects;
 }
